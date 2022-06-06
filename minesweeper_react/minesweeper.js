@@ -67,6 +67,7 @@ export class Board {
     this.numBombs = numBombs;
     this.generateBoard();
     this.plantBombs();
+    console.log("hello");
   }
 
   generateBoard() {
