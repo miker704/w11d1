@@ -19,7 +19,12 @@ class Board extends React.Component {
         const array = this.props.board;
         return subArray.map (
             (tile, idx) => {
-                return (<></>)
+                return (
+                <Tile
+                tile={tile}
+                updateGame = {this.props.updateGame}
+                key={idx}
+                />)
             }
         )
 

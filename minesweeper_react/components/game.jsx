@@ -16,20 +16,30 @@ class Game extends React.Component {
 
         this.state = { board: board };
         this.updateGame = this.updateGame.bind(this);
+        this.restartgame = this.restartgame.bind(this);
     }
 
-    updateGame () {
-
+    updateGame (tile, flagged) {
+        if(flagged === true){
+            tile.toggleFlag();
+        }
+        else{
+            tile.explore();
+        }
+        this.setState({ board: this.state.board });
     }
 
-
+    restartgame(){
+        const board = new Minesweeper.Board(10,2);
+        this.setState({board:board});
+    }
 
     render () {
 
 
         return (
             <div>
-                <Board board ={this.state.board}/>
+                <Board board ={this.state.board} updateGame={this.updateGame}/>
             </div>
         );
 
