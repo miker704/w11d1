@@ -1,12 +1,18 @@
 import React from "react";
 import Tile from "./tile";
+import Board from "./board"
+// import * as Minesweeper from "../minesweeper"
+import {Board} from "../minesweeper"
+
 
 
 class Game extends React.Component {
     constructor (props) {
 
         super(props);
-        const board = new Minesweeper.board();
+        debugger
+        // const board = new Minesweeper.Board.board(10,2);
+        const board = new Board(10,2)
 
         this.state = { board: board };
         this.updateGame = this.updateGame.bind(this);
@@ -20,25 +26,10 @@ class Game extends React.Component {
 
     render () {
 
-        // const currentBoard = this.state.board.map(
-        //     (subArr) => {
-        //         subArr.map(
-        //             (ele, idx) => {
-        //                 return (
-        //                     // <li key={idx}>{ele}</li>
-        //                     <Tile />
-        //                 );
-        //             }
-        //         );
-        //     }
-
-        // );
-
 
         return (
             <div>
-                            <Tile />
-                
+                <Board board ={this.state.board}/>
             </div>
         );
 
