@@ -1,5 +1,5 @@
 import React from "react";
-
+import Tile from "./tile";
 
 
 class Game extends React.Component {
@@ -19,11 +19,30 @@ class Game extends React.Component {
 
 
     render () {
+
+        // const currentBoard = this.state.board.map(
+        //     (subArr) => {
+        //         subArr.map(
+        //             (ele, idx) => {
+        //                 return (
+        //                     // <li key={idx}>{ele}</li>
+        //                     <Tile />
+        //                 );
+        //             }
+        //         );
+        //     }
+
+        // );
+
+
         return (
             <div>
-
+                            <Tile />
+                
             </div>
         );
+
+
     }
 }
 

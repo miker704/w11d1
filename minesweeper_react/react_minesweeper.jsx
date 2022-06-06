@@ -1,11 +1,12 @@
 import Game from "./components/game";
 import React from "react";
-import { ReactDOM } from "react";
+import  ReactDOM  from "react-dom";
+import Tile from "./components/tile";
 
-ReactDOM.render(
+document.addEventListener("DOMContentLoaded", () => {
 
-    <p>HelloWorld</p>,
-    document.getElementById('root')
+    ReactDOM.render(<Tile/>,
+        document.getElementById('root')
+    );
 
-
-);
+})
